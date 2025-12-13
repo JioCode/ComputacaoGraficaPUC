@@ -55,7 +55,6 @@ shootKey = mouse_check_button( mb_left );
 	
 #endregion
 
-
 //Atirar a arma
 #region
 if shootTimer > 0 { shootTimer--; }
@@ -78,3 +77,4 @@ if shootKey && shootTimer <=0
 		
 }
 #endregion
+

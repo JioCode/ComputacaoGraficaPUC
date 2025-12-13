@@ -9,6 +9,13 @@
   "name":"obj_Bullet",
   "overriddenProperties":[],
   "parent":{
+    "name":"Sprites",
+    "path":"folders/Sprites.yy",
+  },
+  "parentObjectId":{
+    "name":"obj_Damage",
+    "path":"objects/obj_Damage/obj_Damage.yy",
+  },
     "name":"Objects",
     "path":"folders/Objects.yy",
   },
@@ -31,6 +38,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
+    "name":"Sprite10",
+    "path":"sprites/Sprite10/Sprite10.yy",
     "name":"spr_Bullet",
     "path":"sprites/spr_Bullet/spr_Bullet.yy",
   },
