@@ -3,7 +3,7 @@ rightKey = keyboard_check( ord( "D" ) );
 leftKey = keyboard_check( ord( "A" ) );
 upKey = keyboard_check( ord( "W" ) );
 downKey = keyboard_check( ord( "S" ) );
-shootKey = mouse_check_button(mb_left);
+shootKey = mouse_check_button( mb_left );
 
 //movimentacao player
 #region
@@ -37,34 +37,44 @@ shootKey = mouse_check_button(mb_left);
 	
 #endregion
 
+//Sprites
+#region
 //mira do player
 	centerY = y + centerYOffset;
 	//mira
 	aimDir = point_direction( x, centerY, mouse_x, mouse_y );
 
 
-//Sprites
-#region
-	//Direcao que o player esta olhando
-	face = round( aimDir/90 );
-	if face == 4 { face = 0; };
+		//Direcao que o player esta olhando
+		face = round( aimDir/90 );
+		if face == 4 { face = 0; };
 
-	//Settar o sprite
+		//Settar o sprite
 	
-	sprite_index = sprite[face];
+		sprite_index = sprite[face];
 	
 #endregion
 
-//tiros
-if shootTimer > 0 {shootTimer--;};
-if shootKey && shootTimer <= 0{
-	//timer
-	shootTimer = shootCooldown;
-	//create the bullet
-var _bulletInst = instance_create_depth( x, centerY, depth-100, bulletObj );
+//Atirar a arma
+#region
+if shootTimer > 0 { shootTimer--; }
 
-//change the bullet's direction
-with( _bulletInst )
-
-dir = other.aimDir;
+if shootKey && shootTimer <=0
+{
+		//resetar timer
+		shootTimer = shootCooldown;
+		
+		//criando a bala (obj_Bullet)
+		var _xOffset = lengthdir_x( weaponLength + weaponOffsetDist, aimDir );
+		var _yOffset = lengthdir_y( weaponLength + weaponOffsetDist, aimDir );
+		var _bulletInst = instance_create_depth( x + _xOffset, centerY + _yOffset, depth-100, bulletObj );
+		
+		//mudar a direçao da bala
+		with( _bulletInst )
+		{
+			dir = other.aimDir;
+		}
+		
 }
+#endregion
+

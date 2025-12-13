@@ -1,6 +1,11 @@
-event_inherited()
 
+event_inherited()
 dir = 0;
-spd = 5;
+spd = 10;
 xspd = 0;
 yspd = 0;
+
+//limpar as balas para n sobrecarregar
+maxDist = 1000;
+destroy = false;
+
