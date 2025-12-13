@@ -1,10 +1,11 @@
 //inputs
-rightKey = keyboard_check( vk_right );
-leftKey = keyboard_check( vk_left );
-upKey = keyboard_check( vk_up );
-downKey = keyboard_check( vk_down );
+rightKey = keyboard_check( ord( "D" ) );
+leftKey = keyboard_check( ord( "A" ) );
+upKey = keyboard_check( ord( "W" ) );
+downKey = keyboard_check( ord( "S" ) );
 
 //movimentacao player
+#region
 	//pegar direcao do movimento
 	var _horizKey = rightKey - leftKey;
 	var _vertKey = downKey - upKey;
@@ -29,3 +30,26 @@ downKey = keyboard_check( vk_down );
 	//move o player
 	x += xspd;
 	y += yspd;
+	
+	//profundidade
+	depth = -bbox_bottom;
+	
+#endregion
+
+//mira do player
+	centerY = y + centerYOffset;
+	//mira
+	aimDir = point_direction( x, centerY, mouse_x, mouse_y );
+
+
+//Sprites
+#region
+	//Direcao que o player esta olhando
+	face = round( aimDir/90 );
+	if face == 4 { face = 0; };
+
+	//Settar o sprite
+	
+	sprite_index = sprite[face];
+	
+#endregion
