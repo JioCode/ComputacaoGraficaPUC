@@ -1,4 +1,4 @@
-//Iniciando variaveis de movimento
+ //Iniciando variaveis de movimento
 	moveDir = 0;
 	moveSpd = 5;
 	xspd = 0;
