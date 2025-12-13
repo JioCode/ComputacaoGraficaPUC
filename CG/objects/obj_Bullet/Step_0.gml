@@ -16,3 +16,4 @@
 	//bala fora da range
 	if point_distance( xstart, ystart, x, y ) > maxDist { destroy = true; }
 	
+	

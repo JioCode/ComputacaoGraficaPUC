@@ -19,7 +19,6 @@
 	sprite[2] = spr_PlayerLeft;
 	sprite[3] = spr_PlayerDown;
 
-
 //informacoes da arma
 	shootTimer = 0;
 	shootCooldown = 9;
