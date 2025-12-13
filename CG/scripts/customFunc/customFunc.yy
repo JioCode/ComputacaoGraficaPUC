@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"customFunc",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"customFunc",
+  "parent":{
+    "name":"CG",
+    "path":"CG.yyp",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}
