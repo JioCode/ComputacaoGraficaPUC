@@ -8,13 +8,6 @@
   "name":"obj_Bullet",
   "overriddenProperties":[],
   "parent":{
-    "name":"Sprites",
-    "path":"folders/Sprites.yy",
-  },
-  "parentObjectId":{
-    "name":"obj_Damage",
-    "path":"objects/obj_Damage/obj_Damage.yy",
-  },
     "name":"Objects",
     "path":"folders/Objects.yy",
   },
