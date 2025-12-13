@@ -19,3 +19,7 @@ sprite[1] = spr_PlayerUp;
 sprite[2] = spr_PlayerLeft;
 sprite[3] = spr_PlayerDown;
 
+//arma
+shootTimer = 0;
+shootCooldown = 9;
+bulletObj = obj_Bullet;

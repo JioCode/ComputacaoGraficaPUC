@@ -3,6 +3,7 @@ rightKey = keyboard_check( ord( "D" ) );
 leftKey = keyboard_check( ord( "A" ) );
 upKey = keyboard_check( ord( "W" ) );
 downKey = keyboard_check( ord( "S" ) );
+shootKey = mouse_check_button(mb_left);
 
 //movimentacao player
 #region
@@ -53,3 +54,17 @@ downKey = keyboard_check( ord( "S" ) );
 	sprite_index = sprite[face];
 	
 #endregion
+
+//tiros
+if shootTimer > 0 {shootTimer--;};
+if shootKey && shootTimer <= 0{
+	//timer
+	shootTimer = shootCooldown;
+	//create the bullet
+var _bulletInst = instance_create_depth( x, centerY, depth-100, bulletObj );
+
+//change the bullet's direction
+with( _bulletInst )
+
+dir = other.aimDir;
+}
