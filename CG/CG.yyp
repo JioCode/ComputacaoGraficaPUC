@@ -23,6 +23,7 @@
   },
   "name":"CG",
   "resources":[
+    {"id":{"name":"obj_Bullet","path":"objects/obj_Bullet/obj_Bullet.yy",},},
     {"id":{"name":"obj_Player","path":"objects/obj_Player/obj_Player.yy",},},
     {"id":{"name":"obj_SolidWall","path":"objects/obj_SolidWall/obj_SolidWall.yy",},},
     {"id":{"name":"obj_Wall","path":"objects/obj_Wall/obj_Wall.yy",},},
@@ -30,6 +31,7 @@
     {"id":{"name":"customFunc","path":"scripts/customFunc/customFunc.yy",},},
     {"id":{"name":"enemyFront","path":"sprites/enemyFront/enemyFront.yy",},},
     {"id":{"name":"enemyMove","path":"sprites/enemyMove/enemyMove.yy",},},
+    {"id":{"name":"spr_Bullet","path":"sprites/spr_Bullet/spr_Bullet.yy",},},
     {"id":{"name":"spr_PlayerDown","path":"sprites/spr_PlayerDown/spr_PlayerDown.yy",},},
     {"id":{"name":"spr_PlayerLeft","path":"sprites/spr_PlayerLeft/spr_PlayerLeft.yy",},},
     {"id":{"name":"spr_PlayerRight","path":"sprites/spr_PlayerRight/spr_PlayerRight.yy",},},
