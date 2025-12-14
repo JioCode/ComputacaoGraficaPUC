@@ -10,8 +10,9 @@ switch(state)
 		}
 		
 		//set depth to make myself visible
-		depth = -y;
-					state = 1;
+		depth = -y - 50;
+								
+
 	
 	break;
 	
@@ -24,6 +25,23 @@ switch(state)
 
 		//updated depth
 		depth = -y;
+		
+		//shoot a bullet
+		
+		
 	break; 
 	
 }
+
+//clean up
+	//out of room bounds
+	if bbox_right < 0 || bbox_left > room_width || bbox_bottom < 0 || bbox_top > room_height
+	{
+		destroy = true;
+	}
+	//player colision
+	if hitConfirm == true && playerDestroy == true {destroy = true;};
+	//actually destroy self
+	if destroy == true {instance_destroy();};
+	//wall collision
+	if place_meeting(x,y, obj_SolidWall) {destroy = true;};

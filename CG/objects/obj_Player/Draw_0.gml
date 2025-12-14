@@ -13,5 +13,9 @@
 		draw_my_weapon();
 	}
 
+//desenhar a vida
+draw_text(x,y, string(hp));
+//balas inimigas no mapa
+//draw_text(x,y + 20 , string(instance_number(obj_EnemyBullet)));
 
 	

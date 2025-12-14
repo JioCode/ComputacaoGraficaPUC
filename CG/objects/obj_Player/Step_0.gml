@@ -5,6 +5,61 @@ upKey = keyboard_check( ord( "W" ) );
 downKey = keyboard_check( ord( "S" ) );
 shootKey = mouse_check_button( mb_left );
 
+
+//dano no jogador
+// 1. Detectar colisão com a bala do inimigo e o inimigo
+var _balaInimiga = instance_place(x, y, obj_EnemyBullet);
+var _inimigo = instance_place(x, y, obj_Enemy);
+if (invencivelTimer <= 0)
+{
+    //Tocou no Inimigo
+    if (_inimigo != noone)
+    {
+        hp -= 1;          
+        invencivelTimer = 60;
+        
+        // Empurra o player um pouco para trás para desgrudar do inimigo
+        var _empurraoDir = point_direction(_inimigo.x, _inimigo.y, x, y);
+        x += lengthdir_x(40, _empurraoDir);
+        y += lengthdir_y(-40, _empurraoDir);
+    }
+}
+
+if (_balaInimiga != noone && invencivelTimer <= 0)
+{
+    hp -= 1; 
+    invencivelTimer = 60;
+    
+    instance_destroy(_balaInimiga);
+}
+
+//Controla o tempo de invencibilidade
+if (invencivelTimer > 0)
+{
+    invencivelTimer--;
+    
+    // Efeito visual enquanto estiver invencível
+    if (invencivelTimer % 10 < 5) 
+    {
+        image_alpha = 0.5; 
+    }
+    else 
+    {
+        image_alpha = 1; 
+    }
+}
+else
+{
+    image_alpha = 1; 
+}
+
+// 3. Checar Morte (Game Over)
+if (hp <= 0)
+{
+    //reinicia o jogo
+    game_restart(); 
+}
+
 //movimentacao player
 #region
 	//pegar direcao do movimento
