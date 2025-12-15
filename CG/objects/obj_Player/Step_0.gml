@@ -7,6 +7,7 @@ shootKey = global.shootKey;
 
 
 //dano no jogador
+#region
 // 1. Detectar colisão com a bala do inimigo e o inimigo
 var _balaInimiga = instance_place(x, y, obj_EnemyBullet);
 var _inimigo = instance_place(x, y, obj_Enemy);
@@ -63,6 +64,18 @@ if (hp <= 0)
 	}
 	instance_destroy();
 }
+
+if (global.enemyKillCount == global.enemyRoomMax && hp != 0)
+{
+	//cria o obj de fim de jogo
+	if (!instance_exists(obj_winScreen))
+	{
+		global.enemyKillCount = 0;
+		instance_create_depth(0,0,-10000, obj_winScreen)
+	}
+	instance_destroy();
+}
+#endregion
 
 //movimentacao player
 #region
