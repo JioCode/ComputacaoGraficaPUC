@@ -15,7 +15,7 @@ draw_rectangle_colour(_camX, _camY, _camX + _camW, _camY + _camH, c_black, c_bla
 	draw_set_font(Font1);
 	
 	var _gameOverOffSet = -32;
-	draw_text_transformed(_camX + _camW/2, _camY + _camH/2 + _gameOverOffSet, "Você ganhou!",3,3,0);
+	draw_text_transformed(_camX + _camW/2, _camY + _camH/2 + _gameOverOffSet, "Voce ganhou!",3,3,0);
 	
 	//atire para reiniciar 
 	var _restartOffSet = 60;
