@@ -1,9 +1,9 @@
 //inputs
-rightKey = keyboard_check( ord( "D" ) );
-leftKey = keyboard_check( ord( "A" ) );
-upKey = keyboard_check( ord( "W" ) );
-downKey = keyboard_check( ord( "S" ) );
-shootKey = mouse_check_button( mb_left );
+rightKey = global.rightKey;
+leftKey = global.leftKey;
+upKey = global.upKey;
+downKey = global.downKey;
+shootKey = global.shootKey;
 
 
 //dano no jogador
@@ -56,8 +56,12 @@ else
 // 3. Checar Morte (Game Over)
 if (hp <= 0)
 {
-    //reinicia o jogo
-    game_restart(); 
+	//cria o obj de fim de jogo
+	if (!instance_exists(obj_GameOverScreem))
+	{
+		instance_create_depth(0,0,-10000, obj_GameOverScreem)
+	}
+	instance_destroy();
 }
 
 //movimentacao player
