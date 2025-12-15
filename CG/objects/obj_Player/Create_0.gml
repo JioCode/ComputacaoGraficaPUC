@@ -3,7 +3,8 @@
 	moveSpd = 5;
 	xspd = 0;
 	yspd = 0;
-	hp = 6 
+	hp = 6;
+	maxHp = 6;
 	invencivelTimer = 0; // Se maior que 0, o player não toma dano
 
 //Controlar Sprite

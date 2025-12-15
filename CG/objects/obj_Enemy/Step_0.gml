@@ -1,6 +1,29 @@
+var _collisions = true;
+var _getDamage = true;
+
 //state machine 
 switch (state)
 {
+	//spawn
+		case -1:
+			while image_alpha < 1
+			{
+				spd = 0;
+				image_alpha += fadeSpd;	
+			}
+			_collisions = false;
+			_getDamage =false;
+			if image_alpha >= 1
+			{
+				spd = emergeSpd;
+				dir = 270;
+			}
+			
+			if !place_meeting(x, y, obj_Wall) && !place_meeting(x,y, obj_Enemy) 
+			{ state = 0 }
+			
+		break;
+	
 	//chase case 
 		case 0:
 			//get player's direction
@@ -83,6 +106,8 @@ if place_meeting( x, y, obj_Damage){
 }
 
 if hp <= 0{
+	global.enemyKillCount++;
+	
 	instance_destroy();	
 }
 
@@ -93,16 +118,24 @@ if hp <= 0{
 
 //moving
 	//collisions
-	if place_meeting( x + xspd, y, obj_Wall ){
-		xspd = 0;
+	if _collisions ==true
+	{
+		if place_meeting( x + xspd, y, obj_Wall ){
+			xspd = 0;
+		}
+		if place_meeting( x, y + yspd, obj_Wall ){
+			yspd = 0;
+		}
 	}
-	if place_meeting( x, y + yspd, obj_Wall ){
-		yspd = 0;
-	}
-
+	
 	x += xspd;
 	y += yspd;
 	
 	//set the depthj
 	
 	depth =-y;
+	
+if _getDamage == true
+{
+	event_inherited();
+}
